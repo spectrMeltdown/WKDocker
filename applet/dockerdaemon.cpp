@@ -211,7 +211,7 @@ void DockerDaemon::doUndock(int slotIndex)
 
 void DockerDaemon::doUndockAll()
 {
-    for (int i; i < NUM_SLOTS; i++) {
+    for (int i = 0; i < NUM_SLOTS; i++) {
         if (m_dockedWindows[i] != NULL) {
             doUndock(i);
         }

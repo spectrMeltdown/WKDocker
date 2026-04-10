@@ -176,7 +176,7 @@ function getAvailableSetup(slotIndex)
                                       if (ws["Initialized"] == false) {
                                           ws["SkipPager"] = b;
                                           ws["SkipTaskBar"] = c;
-                                          ws["IcdconifyIfMinimized"] = d;
+                                          ws["IconifyIfMinimized"] = d;
                                           ws["LockToDesktop"] = e;
                                           ws["Sticky"] = f;
                                           ws["Initialized"] = true;
@@ -315,7 +315,7 @@ function onMinimize()
                 testWindow.skipSwitcher = true;
             } else {
                 testWindow.skipTaskbar = clientList[i]["SkipTaskBar"];
-                testWindow.skipPager = clientList[i]["SkipPager"];
+                testWindow.skipSwitcher = clientList[i]["SkipPager"];
             }
         }
     }
@@ -349,7 +349,7 @@ function onClose(slotIndex)
              "/docker",
              "org.andtru.wkdocker.DockerDaemon",
              "onClientClosed",
-             currentClientIndex);
+             slotIndex);
 }
 
 /* Callbacks initiated when the caption (title in the title
