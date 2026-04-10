@@ -41,6 +41,7 @@ install(TARGETS WKDockerApp
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
 configure_file(dbus-service/org.andtru.wkdocker.service.in
-               ${CMAKE_CURRENT_BINARY_DIR}/org.andtru.wkdocker.service)
+               ${CMAKE_CURRENT_BINARY_DIR}/org.andtru.wkdocker.service
+               @ONLY)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.andtru.wkdocker.service
         DESTINATION ${KDE_INSTALL_DBUSSERVICEDIR})
